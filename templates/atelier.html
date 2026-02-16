@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Températures Marseille — Google bubbleChart</title>
+  <title>Températures Marseille — Google LineChart</title>
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -79,7 +79,7 @@
       data.addRows(rows);
 
       const options = {
-        title: 'Température à marseille (horaire)',
+        title: 'Température à Marseille (horaire)',
         legend: { position: 'bottom' },
         hAxis: {
           title: 'Date/Heure',
@@ -91,10 +91,10 @@
         explorer: { actions: ['dragToZoom', 'rightClickToReset'] }
       };
 
-      const chart = new google.visualization.BubbleChart(document.getElementById('chart'));
+      const chart = new google.visualization.LineChart(document.getElementById('chart'));
       chart.draw(data, options);
 
-      showStatus(`OK — ${rows.length} points chargés depuis /marseille`);
+      showStatus(`OK — ${rows.length} points chargés depuis /paris`);
     }
 
     function showStatus(msg) {
